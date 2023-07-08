@@ -37,9 +37,13 @@ const Feedback = () => {
       if (!companyName || !category || !productLink || !description) {
         alert("Kindly filled completely form");
       } else {
-        await axios.post("http://localhost:8080/api/products", form, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        await axios.post(
+          "https://fb-backend-a1wb.onrender.com/api/products",
+          form,
+          {
+            headers: { "Content-Type": "multipart/form-data" },
+          }
+        );
 
         alert("Product add successfully");
         window.location.reload();
@@ -103,9 +107,12 @@ const Feedback = () => {
   const handleCommitClick = (itemId) => {
     const inputText = comment;
     axios
-      .put(`http://localhost:8080/api/products/${itemId}/comments`, {
-        commit: inputText,
-      })
+      .put(
+        `https://fb-backend-a1wb.onrender.com/api/products/${itemId}/comments`,
+        {
+          commit: inputText,
+        }
+      )
       .then((response) => {
         window.location.reload();
       })
@@ -287,7 +294,7 @@ const Feedback = () => {
                     <Box sx={{ width: "100%", display: "flex" }}>
                       <Box sx={{ width: "13%" }}>
                         <img
-                          src={`http://localhost:8080/${item.image}`}
+                          src={`https://fb-backend-a1wb.onrender.com/${item.image}`}
                           alt=""
                           className="Icon_image"
                         />
