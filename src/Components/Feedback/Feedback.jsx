@@ -71,7 +71,7 @@ const Feedback = () => {
   useEffect(() => {
     // Call the API in the useEffect hook
     axios
-      .get("http://localhost:8080/api/AllProducts")
+      .get("https://fb-backend-a1wb.onrender.com/api/AllProducts")
       .then((response) => {
         setProducts(response.data);
       })
